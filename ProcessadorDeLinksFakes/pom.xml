@@ -30,10 +30,6 @@
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<groupId>org.apache.maven.plugins</groupId>
-				<configuration>
-					<altReleaseDeploymentRepository>Cristiano-PC</altReleaseDeploymentRepository>
-					<altSnapshotDeploymentRepository>Cristiano-PC</altSnapshotDeploymentRepository>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
