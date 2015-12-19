@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.castro</groupId>
+	<artifactId>processador-links-fakes</artifactId>
+	<version>1.1.0-RELEASE</version>
+
+	<developers>
+		<developer>
+			<name>Cristiano da Silva Castro</name>
+			<email>cscastro87@gmail.com</email>
+		</developer>
+	</developers>
+
+	<build>
+
+		<finalName>Processador links fakes</finalName>
+		<sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>test</testSourceDirectory>
+		
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<configuration>
+					<altReleaseDeploymentRepository>Cristiano-PC</altReleaseDeploymentRepository>
+					<altSnapshotDeploymentRepository>Cristiano-PC</altSnapshotDeploymentRepository>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>br.com.cristiano.processador.links.Main</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>Cristiano-PC</id>
+			<name>Cristiano-PC-snapshots</name>
+			<url>http://192.168.1.120:8081/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>Cristiano-PC</id>
+			<name>Cristiano-PC-central</name>
+			<url>http://192.168.1.120:8081/artifactory/libs-release-local</url>
+		</repository>
+	</distributionManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
